@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Listar</title>
+</head>
+<body>
+	<?php include_once('listar.php');?>
+	<table border="1px">
+		
+		<tr>
+			<td>Nº</td>
+			<td>Nome</td>
+			<td>Sexo</td>
+			<td>Atualizar</td>
+			<td>Excluir</td>
+		</tr>
+		<?php
+		  include_once('conexao.php');
+		  $sql = "SELECT * FROM ALUNO";
+		  $r = mysqli_query($con,$sql);
+
+		  if ($r) {
+		  	while ($result = mysqli_fetch_array($r)) {?>
+
+		  		<tr>
+		  			<td> <?php echo $result['numero']; ?> </td>
+		  			<td> <?php echo $result['nome']; ?> </td>
+		  			<td> <?php echo $result['sexo']; ?> </td>
+		  			<td> <a href="atualizar.php" ?numero = <?php echo $result['numero'] ?> > <img src="atu.png" width="20" height="20"></a> Atualizar</td>
+		  			<td> <a href=""><img src="exc.png" width="20" height="20"></a> </td>
+		  		</tr>
+		  		<?php 
+		  	}
+		  }
+		  ?>
+
+	</table>
+
+</body>
+</html>
