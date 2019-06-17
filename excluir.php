@@ -6,7 +6,7 @@
 
 include_once('conexao.php');
 
-	$sql = "DELETE FROM ALUNO WHERE NUMERO = $numero";
+	$sql = "DELETE FROM USER WHERE TELEFONE = $numero";
 
 	$r = mysqli_query($con, $sql);
 

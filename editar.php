@@ -23,26 +23,33 @@
 	
 	h1{
 		text-align: center;
-		color: blue;	
+		color:white;	
 	}
 	#a{
-			background-color: blue;
+			background-color: red;
 			text-decoration: none;
 			text-align: center;
-			height: 100px;
+			height: 200px;
 		}
 		#b{
-			margin-top: -30px;
-			background-color: lightblue;
+			background-color: green;
 			text-decoration: none;
 			text-align: center;
 			height: 600px;
 		}
 		#c{
-			background-color: blue;
+			background-color: red;
 			text-decoration: none;
 			text-align: center;
 			height: 100px;
+		}
+		
+	button{
+		border-radius: 10px;
+
+	}
+	a {
+			text-decoration: none
 		}
 	</style>
 
@@ -50,15 +57,16 @@
 <?php 
  include_once('conexao.php');
 
-	$numero = $_GET['id'];
+	$telefone = $_GET['id'];
 	$nome = $_GET['nome'];
-	$sexo = $_GET['sexo'];
+	$mail = $_GET['mail'];
 	
 
 	
 ?>
-	<h1>Atualisar cadastro</h1>
+	
  <div id="a">
+ 	<h1>Atualisar cadastro</h1>
  	<button><a href="listar.php">Listar</a></button>
  	<button><a href="index.html">Home</a></button>
 	<button><a href="cadastroAluno.php">Cadastrar</a></button>
@@ -70,10 +78,9 @@
 	<form action="atualisar.php" method="POST">
 		<tr>
 			<td>
-		Numero:<input type="text" name="n" value="<?php echo $numero;?>" size="2"><br><br>
+		Numero:<input type="text" name="id" value="<?php echo $telefone;?>" size="20"><br><br>
 		Nome:<input type="text" name="nome" value="<?php echo $nome;?>" size="20" ><br><br>
-		Sexo:<input type="radio" name="sexo" value="m" <?php echo ($sexo == 'm') ? 'checked' : null ?>>M
-			 <input type="radio" name="sexo" value="f" <?php echo ($sexo == 'f') ? 'checked' : null ?>>F<br><br>
+		Sexo:<input type="text" name="email" value="<?php echo $mail;?>" size="20" ><br><br>
 
 			 </a><input type="submit" value="Editar">
 			 </td>

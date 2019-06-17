@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Listar</title>
+	<meta charset="utf-8">
+	<title>Listar Usuários</title>
 </head>
 	<style type="text/css">
 
@@ -25,49 +26,57 @@
 	
 	h1{
 			text-align: center;
-			color: blue;
+			color: white;
 		}
 		#a{
-			background-color: blue;
+			background-color: red;
 			text-decoration: none;
 			text-align: center;
-			height: 100px;
+			height: 200px;
 		}
 		#b{
-			margin-top: -30px;
-			background-color: lightblue;
+			background-color: green;
 			text-decoration: none;
 			text-align: center;
 			height: 600px;
 		}
 		#c{
-			background-color: blue;
+			background-color: red;
 			text-decoration: none;
 			text-align: center;
 			height: 100px;
 		}
+
+	button{
+		border-radius: 10px;
+
+	}
+	a {
+			text-decoration: none
+		}
 	</style>
 <body>
-	<?php include_once('conexao.php');?>
-	<h1>LISTA DE ALUNOS CADASTRADOS</h1>
+	<?php include_once('conection.php');?>
+	
 	<div id="a">
+		<h1>LISTA DE USUARIOS CADASTRADOS</h1>
 		<button><a href="listar.php">Listar</a></button>
-		<button><a href="index.html">Home</a></button>
-	<button><a href="cadastroAluno.php">Cadastrar</a></button>
+		<button><a href="UserIndex.html">Home</a></button>
+	<button><a href="cadastroUser.php">Cadastrar</a></button>
 	</div>
 	<div id="b">
 			
 	<table border="1px" align="center">
 		
 		<tr>
-			<td>Nº</td>
+			<td>Telefone</td>
 			<td>Nome</td>
-			<td>Sexo</td>
+			<td>E-mail</td>
 			<td>Atualizar</td>
 			<td>Excluir</td>
 		</tr>
 		<?php
-		  $sql = "SELECT * FROM ALUNO";
+		  $sql = "SELECT * FROM USER";
 
 		  $r = mysqli_query($con, $sql);
 
@@ -75,12 +84,12 @@
 		  	while ($dados = mysqli_fetch_array($r)) {?>
 
 		  		<tr>
-		  			<td> <?php echo $dados['numero']; ?> </td>
-		  			<td> <?php echo $dados['nome']; ?> </td>
-		  			<td> <?php echo $dados['sexo']; ?> </td>
-		  			<td> <a href="editar.php?id=<?php   echo $dados['numero']; ?> &nome=<?php   echo $dados['nome']; ?>&sexo=<?php echo $dados['sexo']; ?>"> <img src="atu.png" width="20" height="20"></a> </td>
+		  			<td> <?php echo $dados['Telefone']; ?> </td>
+		  			<td> <?php echo $dados['Nome']; ?> </td>
+		  			<td> <?php echo $dados['mail']; ?> </td>
+		  			<td> <a href="editar.php?id=<?php   echo $dados['Telefone']; ?> &nome=<?php   echo $dados['Nome']; ?>&mail=<?php echo $dados['mail']; ?>"> <img src="atu.png" width="20" height="20"></a> </td>
 
-		  			<td> <a href="excluir.php?id=<?php   echo $dados['numero']; ?>   "><img src="exc.png" width="20" height="20"></a> </td>
+		  			<td> <a href="excluir.php?id=<?php   echo $dados['Telefone']; ?>   "><img src="exc.png" width="20" height="20"></a> </td>
 		  		</tr>
 		  		<?php 
 		  	}

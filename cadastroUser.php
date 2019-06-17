@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cadastro de Alunos</title>
+	<meta charset="utf-8">
+	<title>Cadastro de Usuários</title>
 </head>
 <style type="text/css">
 	table{
 		
 		border-radius: 25px;
-		height: 200px;
-		background-color: gray;
-		color: white;
+		height: 400px;
+		width: 400px;
+		background-color: lightgreen;
+		color: black;
 		font-family: italic;
 		
 	}
+
+	button{
+		border-radius: 10px;
+
+
+	}
+	a {
+			text-decoration: none
+		}
+
 
 	td{
 		border-radius: 25px;
@@ -24,35 +36,35 @@
 	
 	h1{
 		text-align: center;
-		color: blue;	
+		color: white;	
 	}
 	#a{
-			background-color: blue;
+			background-color: red;
 			text-decoration: none;
 			text-align: center;
-			height: 100px;
+			height: 200px;
 		}
 		#b{
-			margin-top: -30px;
-			background-color: lightblue;
+			background-color: green;
 			text-decoration: none;
 			text-align: center;
 			height: 600px;
 		}
 		#c{
-			background-color: blue;
+			background-color: red;
 			text-decoration: none;
 			text-align: center;
 			height: 100px;
 		}
 </style>
 <body>
-	<h1>Cadastro</h1>
+	
 	
 <div id="a">
+	<h1>Cadastro</h1>
 	<button><a href="listar.php">Listar</a></button>
-	<button><a href="index.html">Home</a></button>
-	<button><a href="cadastroAluno.php">Cadastrar</a></button>
+	<button><a href="UserIndex.html">Home</a></button>
+	<button><a href="cadastroUser.php">Cadastrar</a></button>
 </div>
 
 <div id="b">
@@ -61,12 +73,11 @@
 	<form action="salvar.php" method="POST">
 		<tr>
 			<td>
-		Numero:<input type="text" name="n" size="2"><br><br>
+		Telefone:<input type="text" name="telefone" size="20"><br><br>
 		Nome:<input type="text" name="nome" size="20"><br><br>
-		Sexo:<input type="radio" name="sexo" value="m">M
-			 <input type="radio" name="sexo" value="f">F<br><br>
+		E-mail:<input type="text" name="email" size="20"><br><br>
 
-			 <input type="submit" value="salvar">
+			 <input type="submit" value="cadastrar">
 			 </td>
 			 </tr>
 	</form>

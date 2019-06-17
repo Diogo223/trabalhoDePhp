@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+</head>
+<style type="text/css">
+		#a{
+			background-color: red;
+			text-decoration: none;
+			text-align: center;
+			height: 200px;
+		}
+		#b{
+			background-color: green;
+			text-decoration: none;
+			text-align: center;
+			height: 600px;
+		}
+		#c{
+			background-color: red;
+			text-decoration: none;
+			text-align: center;
+			height: 100px;
+		}
+		h1{
+			text-align: center;
+			color: blue;
+		}
+		a{
+			text-decoration: none;
+		}
+		table{
+		margin-left: 45%;
+		border-radius: 25px;
+		height: 200px;
+		background-color: gray;
+		color: white;
+		font-family: italic;
+		
+	}
+
+	td{
+		border-radius: 25px;
+	}
+	input{
+		border-radius: 25px;
+
+	}
+
+	button{
+		border-radius: 10px;
+
+	}
+	a {
+			text-decoration: none
+		}
+	</style>
+<body>
+
+<h1>Login de Usuário</h1>
+	<div id="a">
+	<button><a href="listar.php">Listar</a></button>
+	<button><a href="cadastroAluno.php">Cadastrar</a></button>
+</div>
+
+<div id="b">
+	<table border="1px">
+		<tr>
+	<form action="login.php" method="POST">
+		<td>Login<input type="text" name="login" id="user"></td>
+		</tr>
+		<tr>
+		<td>Senha<input type="password" name="senha" id="pas"></td>
+		</tr>
+		<tr>
+		<td><input type="submit" name="Logar"></td>
+	</form>
+	</tr>
+	</table>
+</div>
+
+	<div id="c">
+	</div>
+
+</body>
+</html>

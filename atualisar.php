@@ -8,31 +8,39 @@
 
 	h1{
 		text-align: center;
-		color: blue;	
+		color: white;	
 	}
 	#a{
-			background-color: blue;
+			background-color: red;
 			text-decoration: none;
 			text-align: center;
-			height: 100px;
+			height: 200px;
 		}
 		#b{
-			margin-top: -30px;
-			background-color: lightblue;
+			background-color: green;
 			text-decoration: none;
 			text-align: center;
 			height: 600px;
 		}
 		#c{
-			background-color: blue;
+			background-color: red;
 			text-decoration: none;
 			text-align: center;
 			height: 100px;
 		}
+
+	button{
+		border-radius: 10px;
+
+	}
+	a {
+			text-decoration: none
+		}
 	</style>
 <body>
-	<h1>Dados Atualizados</h1>
+	
  <div id="a">
+ 	<h1>Atualizar Dados </h1>
  	<button><a href="listar.php">Listar</a></button>
 	<button><a href="index.html">Home</a></button>
 	<button><a href="cadastroAluno.php">Cadastrar</a></button>
@@ -40,13 +48,13 @@
 <div id="b">
 <?php
 
-	$numero = $_POST['n'];
+	$telefone = $_POST['n'];
 	$nome = $_POST['nome'];
-	$sexo = $_POST['sexo'];
+	$mail = $_POST['email'];
 
 	include_once('conexao.php');
 
-	$sql = "UPDATE ALUNO SET NOME ='$nome', SEXO = '$sexo' WHERE NUMERO = $numero ";
+	$sql = "UPDATE USER SET NOME ='$nome', EMAIL = '$mail' WHERE telefone = $n";
 
 	$r = mysqli_query($con, $sql);
 	if($r){
